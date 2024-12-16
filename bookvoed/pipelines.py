@@ -11,11 +11,12 @@ import os
 import time
 class BookvoedPipeline:
     def __init__(self):
-        db_name = os.getenv('db_name')
-        db_user = os.getenv('db_user')
-        db_passwd = os.getenv('db_passwd')
-        db_host = os.getenv('db_host')
-        self.conn = psycopg.connect(database=db_name,user=db_user,password=db_passwd, host=db_host, port=6432)
+        # db_name = os.getenv('db_name')
+        # db_user = os.getenv('db_user')
+        # db_passwd = os.getenv('db_passwd')
+        # db_host = os.getenv('db_host')
+        self.connection = psycopg.connect(os.getenv('CONNECTION_STRING'))
+        # self.connection = psycopg.connect(database=db_name,user=db_user,password=db_passwd, host=db_host, port=6432)
         cursor = self.connection.cursor()
         cursor.execute('select 1')
         test_result = cursor.fetchall()
@@ -39,7 +40,7 @@ class BookvoedPipeline:
             return item
         
         cursor = self.connection.cursor()
-        cursor.execute('INSERT INTO items (name, author, price) VALUES (%s, %s, %s)', [item['name'], item['author'], item['price']])
+        cursor.execute('INSERT INTO book_data (name, author, price) VALUES (%s, %s, %s)', [item['name'], item['author'], item['price']])
         self.connection.commit()
 
         return item
