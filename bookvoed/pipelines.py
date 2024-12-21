@@ -35,7 +35,7 @@ class BookvoedPipeline:
             return item
         
         cursor = self.connection.cursor()
-        cursor.execute('INSERT INTO book_data (name, author, price) VALUES (%s, %s, %s)', [item['Название'], item['Автор(ы)'], item['Цена']])
+        cursor.execute('INSERT INTO book_data (Name, Author, Price) VALUES (%s, %s, %s)', [item['Name'], item['Author'], item['Price']])
         self.connection.commit()
 
         return item
