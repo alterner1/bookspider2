@@ -56,21 +56,16 @@ DOWNLOAD_DELAY = 2
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
-EXTENSIONS = {
+#EXTENSIONS = {
     #"scrapy.extensions.telnet.TelnetConsole": None,
     #  "scrapy.extensions.spiderstate.SpiderState",
-      "scrapy.extensions.closespider.CloseSpider"
-}
-
-CLOSESPIDER_TIMEOUT = 1800
-
-CLOSESPIDER_TIMEOUT_NO_ITEM = 1200
-
-CLOSESPIDER_ITEMCOUNT = 10000 
-
-CLOSESPIDER_PAGECOUNT = 9000
-
-CLOSESPIDER_ERRORCOUNT = 1200
+    # "scrapy.extensions.closespider.CloseSpider"
+#}
+# CLOSESPIDER_TIMEOUT = 1800
+# CLOSESPIDER_TIMEOUT_NO_ITEM = 1200
+# CLOSESPIDER_ITEMCOUNT = 10000 
+# CLOSESPIDER_PAGECOUNT = 9000
+# CLOSESPIDER_ERRORCOUNT = 1200
 
 
 # Configure item pipelines
